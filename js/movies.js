@@ -111,3 +111,4 @@ export const deleteFavorite = async (id) => {
         console.log(error);
     }
 }
+
