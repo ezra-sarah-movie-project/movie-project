@@ -7,7 +7,6 @@ window.addEventListener('load',()=>{
     });
 })
 
-
 export const getFavorites = async () => {
     try {
         let url = `http://localhost:3000/favorites`;
