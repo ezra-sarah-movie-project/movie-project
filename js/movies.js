@@ -1,3 +1,15 @@
+
+window.addEventListener('load',()=>{
+    const loader = document.querySelector('.loading');
+    loader.classList.add('loading-hidden');
+    loader.addEventListener('transitioned', ()=>{
+        document.body.removeChild("loading");
+    });
+})
+
+
+
+
 export const getFavorites = async () => {
     try {
         let url = `http://localhost:3000/favorites`;
