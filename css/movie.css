@@ -1,3 +1,39 @@
+.loading{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgray;
+    transition: 3.5s, visibility 3.5s;
+    z-index: 9;
+}
+
+.loading-hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+.loading::after{
+    content: "";
+    width:75px;
+    height: 75px;
+    border: 15px solid #9b5454;
+    border-top-color: #2d2d73;
+    border-radius: 50%;
+    animation: loading .75s ease infinite;
+}
+@keyframes loading {
+    from{
+        transform: rotate(0turn);
+    }
+    to{
+        transform: rotate(1turn);
+    }
+}
+
 .movie-poster{
     position: absolute;
     top: -30px;
