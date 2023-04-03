@@ -1,6 +1,10 @@
 import {setFavorite, patchFavorite, deleteFavorite, getFavorites, getFavorite, renderMovieCards} from "./movies.js";
+import {getMovies} from "./moviesApi.js";
+
 
 (async ()=> {
+    const movies = await getMovies();
+    console.log(movies);
 
     let favorites = await getFavorites();
     console.log(favorites);
