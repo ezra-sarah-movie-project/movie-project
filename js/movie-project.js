@@ -1,18 +1,6 @@
 import {setFavorite, patchFavorite, deleteFavorite, getFavorites, getFavorite} from "./movies.js";
 
 (async ()=> {
-
-
-
-
-
-
-
-
-
-
-
-
     //CAROUSEL FUNCTIONALITY
     let arrows = document.querySelectorAll('.arrow');
 
