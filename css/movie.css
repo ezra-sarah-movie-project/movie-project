@@ -1,13 +1,13 @@
 .movie-poster{
     position: absolute;
-    top: -113px;
+    top: -30px;
     height: 400px;
     aspect-ratio: 2/3;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
 }
 .movie-container{
-    height: 400px;
+    height: 75%;
     position: relative;
     flex-direction: row;
     background-color: rgba(101, 101, 101, 0.78);
@@ -43,4 +43,57 @@
 }
 .movie-compact{
     height: 325px;
+}
+.container.slider{
+    min-height: 70vh;
+}
+.slider-mask {
+    overflow: hidden;
+    align-self: stretch;
+    flex: 1 0 0;
+    position: relative;
+}
+.slides {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.controls>*{
+    font-size: 35px;
+}
+.arrow-left{
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.arrow-right{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.slide{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    transition: all ease .3s;
+    border: 2px solid #fff;
+}
+.slide.left{
+    left: -100%;
+}
+.slide.right{
+    left: 100%;
 }
