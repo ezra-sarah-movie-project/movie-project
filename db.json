@@ -2,27 +2,43 @@
   "favorites": [
     {
       "id": 1,
-      "title": "The Shawshank Redemption",
+      "title": "Blade Runner 2049",
       "genre": "Drama",
-      "rating": 5
+      "rating": 5,
+      "image": "https://image.tmdb.org/t/p/original/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg",
+      "description": "Movie description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem commodi deleniti dolor dolorem eaque est."
     },
     {
       "id": 2,
-      "title": "The Godfather",
-      "genre": "Crime",
-      "rating": 5
+      "title": "AVP: Alien vs. Predator",
+      "genre": "Action",
+      "rating": 5,
+      "image": "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/qUZctuoFL3VKOqeKxhnLwuEE4oF.jpg",
+      "description": "When scientists discover something in the Arctic that appears to be a buried Pyramid, they send a research team out to investigate. Little do they know that they are about to step into a hunting ground where Aliens are grown as sport for the Predator race."
     },
     {
-      "title": "Shrek",
-      "genre": "Comedy",
-      "rating": 2,
-      "id": 3
+      "id": 3,
+      "title": "Predator",
+      "genre": "Action",
+      "rating": 5,
+      "image": "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/k3mW4qfJo6SKqe6laRyNGnbB9n5.jpg",
+      "description": "A team of elite commandos on a secret mission in a Central American jungle come to find themselves hunted by an extraterrestrial warrior."
     },
     {
-      "title": "Shrek 2",
+      "id": 4,
+      "title": "The Shawshank Redemption",
+      "genre": "Drama",
+      "rating": 5,
+      "image": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/hBcY0fE9pfXzvVaY4GKarweriG2.jpg",
+      "description": "Framed in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, where he puts his accounting skills to work for an amoral warden. During his long stretch in prison, Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope."
+    },
+    {
+      "id": 5,
+      "title": "Killer Klowns from Outer Space",
       "genre": "Comedy",
-      "rating": 2,
-      "id": 4
+      "rating": 5,
+      "image": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/gkgqtr2weef0sUM3k1mFe52iola.jpg",
+      "description": "Aliens disguised as clowns crash land on Earth in a rural town to capture unsuspecting victims in cotton candy cocoons for later consumption."
     }
   ]
 }

@@ -1,6 +1,12 @@
-import {setFavorite, patchFavorite, deleteFavorite, getFavorites, getFavorite} from "./movies.js";
+import {setFavorite, patchFavorite, deleteFavorite, getFavorites, getFavorite, renderMovieCards} from "./movies.js";
 
 (async ()=> {
+
+    let favorites = await getFavorites();
+    console.log(favorites);
+    let parent = document.querySelector('.slides');
+    await renderMovieCards(favorites, parent);
+    
     //CAROUSEL FUNCTIONALITY
     let arrows = document.querySelectorAll('.arrow');
 
