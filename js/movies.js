@@ -141,9 +141,10 @@ export const renderMovieCards = (movie, parent) => {
                   <p>---star rating---</p>
                   <p>${movie.description}</p>
                   <div class="movie-container-buttons">
-                    <button type="button">Watch Trailer</button>
-                    <button type="button">Play Now</button>
+                    
+                    
                   </div>
+                  <button type="button">Watch Trailer</button>
                 </div>
             </div>
         `;
