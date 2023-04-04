@@ -206,3 +206,10 @@ form{
     gap: 15px;
 
 }
+.theOtherMovies{
+    display: flex;
+    justify-content: space-between;
+}
+.theOtherMovies .movieStuff {
+    background-color: navajowhite;
+}
