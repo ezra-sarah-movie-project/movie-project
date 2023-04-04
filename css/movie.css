@@ -36,7 +36,7 @@
     content: "";
     width:75px;
     height: 75px;
-    border: 15px solid #9b5454;
+    border: 15px solid #504052;
     border-top-color: #2d2d73;
     border-radius: 50%;
     animation: loading .75s ease infinite;
@@ -100,7 +100,7 @@
     height: 325px;
 }
 .container.slider{
-    min-height: 70vh;
+    min-height: 85vh;
 }
 .slider-mask {
     overflow: hidden;
@@ -125,6 +125,7 @@
     transform: translateY(-50%);
     cursor: pointer;
     color: rgba(255, 222, 173, 0.78);
+    border: unset;
 }
 .arrow-right{
     position: absolute;
@@ -133,6 +134,7 @@
     transform: translateY(-50%);
     cursor: pointer;
     color: rgba(255, 222, 173, 0.78);
+    border: unset;
 }
 
 .slide{
@@ -211,5 +213,5 @@ form{
     justify-content: space-between;
 }
 .theOtherMovies .movieStuff {
-    background-color: navajowhite;
+    /*background-color: navajowhite;*/
 }

@@ -26,22 +26,22 @@ const displayMovies = async () => {
         const movieContainer = document.createElement("div");
         movieContainer.classList.add("movieStuff");
         movieContainer.id = `movieData${index + 1}`;
+        const imageWrapper = document.createElement("div");
+        imageWrapper.classList.add("imageWrapper");
         const banner = document.createElement("img");
         banner.src = movie.banner;
         banner.classList.add("movieBanner");
+        imageWrapper.appendChild(banner);
+        movieContainer.appendChild(imageWrapper);
         const title = document.createElement("div");
         title.classList.add("title");
         title.textContent = movie.title;
         const rating = document.createElement("div");
-        rating.classList.add("Review");
+        rating.classList.add("review");
         rating.textContent = `Rating: ${movie.rating}`;
-
-        movieContainer.appendChild(banner);
         movieContainer.appendChild(title);
         movieContainer.appendChild(rating);
-
         movieListContainer.appendChild(movieContainer);
     });
 };
-
 displayMovies();
