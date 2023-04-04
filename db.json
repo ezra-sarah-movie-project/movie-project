@@ -39,6 +39,30 @@
       "rating": 5,
       "image": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/gkgqtr2weef0sUM3k1mFe52iola.jpg",
       "description": "Aliens disguised as clowns crash land on Earth in a rural town to capture unsuspecting victims in cotton candy cocoons for later consumption."
+    },
+    {
+      "id": 6,
+      "title": "Killer Klowns from Outer Space",
+      "genre": "Comedy",
+      "rating": 5,
+      "image": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/gkgqtr2weef0sUM3k1mFe52iola.jpg",
+      "description": "Aliens disguised as clowns crash land on Earth in a rural town to capture unsuspecting victims in cotton candy cocoons for later consumption."
+    },
+    {
+      "id": 7,
+      "title": "Killer Klowns from Outer Space",
+      "genre": "Comedy",
+      "rating": 5,
+      "image": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/gkgqtr2weef0sUM3k1mFe52iola.jpg",
+      "description": "Aliens disguised as clowns crash land on Earth in a rural town to capture unsuspecting victims in cotton candy cocoons for later consumption."
+    },
+    {
+      "id": 8,
+      "title": "Killer Klowns from Outer Space",
+      "genre": "Comedy",
+      "rating": 5,
+      "image": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/gkgqtr2weef0sUM3k1mFe52iola.jpg",
+      "description": "Aliens disguised as clowns crash land on Earth in a rural town to capture unsuspecting victims in cotton candy cocoons for later consumption."
     }
   ]
 }
