@@ -10,7 +10,34 @@ import {getMovies} from "./moviesApi.js";
     console.log(favorites);
     let parent = document.querySelector('.slides');
     await renderMovieCards(favorites, parent);
-    
+
+    let userMovieTitle = document.querySelector('#movie-title-input');
+    let userMovieRating = document.querySelector('#rating-input');
+    let userMovieGenre = document.querySelector('#genre-input');
+    let userMovieDescription = document.querySelector('#description-input');
+    let userMovieSubmit = document.querySelector('#movie-submit-button');
+
+    userMovieSubmit.addEventListener('click', async (event)=>{
+        event.preventDefault();
+        let userMovie = {
+            title: userMovieTitle.value,
+            genre: userMovieGenre.value,
+            rating: userMovieRating.value,
+            description: userMovieDescription.value,
+        }
+        await setFavorite(userMovie);
+    })
+
+    // Code to get the delete movie button to delete a movie
+    let deleteButton = document.querySelector('#delete-movie-btn');
+    deleteButton.addEventListener('click', async (event) => {
+        event.preventDefault();
+        let id = document.querySelector('#delete-by-id').value;
+        let deletedMovie = await deleteFavorite(id);
+        console.log(`Movie with ID ${id} deleted:`, deletedMovie);
+    });
+
+
     //CAROUSEL FUNCTIONALITY
     let arrows = document.querySelectorAll('.arrow');
 
