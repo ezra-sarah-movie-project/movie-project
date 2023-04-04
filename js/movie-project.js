@@ -26,7 +26,7 @@ import {getMovies} from "./moviesApi.js";
             description: userMovieDescription.value,
         }
         await setFavorite(userMovie);
-    })
+    });
 
     // Code to get the delete movie button to delete a movie
     let deleteButton = document.querySelector('#delete-movie-btn');
@@ -35,6 +35,26 @@ import {getMovies} from "./moviesApi.js";
         let id = document.querySelector('#delete-by-id').value;
         let deletedMovie = await deleteFavorite(id);
         console.log(`Movie with ID ${id} deleted:`, deletedMovie);
+    });
+
+    let userPatchId = document.querySelector('#patch-id');
+    let userPatchTitle = document.querySelector('#patch-title');
+    let userPatchRating = document.querySelector('#patch-rating');
+    let userPatchGenre = document.querySelector('#patch-genre');
+    let userPatchDescription = document.querySelector('#patch-description');
+    let userPatchButton = document.querySelector('#patch-button');
+
+    userPatchButton.addEventListener('click', async (event)=>{
+        event.preventDefault();
+        let movieToUpdate = await getFavorite(userPatchId.value);
+
+        let update = {
+            title: userPatchTitle.value ? userPatchTitle.value : movieToUpdate.title,
+            genre: userPatchGenre.value ? userPatchGenre.value : movieToUpdate.genre,
+            rating: userPatchRating.value ? userPatchRating.value: movieToUpdate.rating,
+            description: userPatchDescription.value ? userPatchDescription.value: movieToUpdate.description
+        }
+        await patchFavorite(userPatchId.value,update);
     });
 
 
@@ -100,4 +120,5 @@ import {getMovies} from "./moviesApi.js";
             });
         });
     });
+
 })();
