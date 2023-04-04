@@ -140,14 +140,6 @@ export const renderMovieCards = (movie, parent) => {
                   <h2>${movie.title}</h2>
                   <p>---star rating---</p>
                   <p>${movie.description}</p>
-                  <h3>Cast:</h3>
-                  <div class="cast-wrapper">
-                    <img src="https://image.tmdb.org/t/p/original/lyUyVARQKhGxaxy0FbPJCQRpiaW.jpg" alt="Ryan Gosling" class="cast-avatar">
-                    <img src="https://image.tmdb.org/t/p/original/lyUyVARQKhGxaxy0FbPJCQRpiaW.jpg" alt="Ryan Gosling" class="cast-avatar">
-                    <img src="https://image.tmdb.org/t/p/original/lyUyVARQKhGxaxy0FbPJCQRpiaW.jpg" alt="Ryan Gosling" class="cast-avatar">
-                    <img src="https://image.tmdb.org/t/p/original/lyUyVARQKhGxaxy0FbPJCQRpiaW.jpg" alt="Ryan Gosling" class="cast-avatar">
-                    <img src="https://image.tmdb.org/t/p/original/lyUyVARQKhGxaxy0FbPJCQRpiaW.jpg" alt="Ryan Gosling" class="cast-avatar">
-                  </div>
                   <div class="movie-container-buttons">
                     <button type="button">Watch Trailer</button>
                     <button type="button">Play Now</button>
