@@ -155,12 +155,12 @@ export const renderMovieCards = (movie, parent) => {
 }
 
 //create new favorite movie and save to database using "POST" method
- export const newUserMovie = async (event)=> {
+export const newUserMovie = async (event)=> {
     event.preventDefault();
-     let userMovieTitle = document.querySelector('#movie-title-input');
-     let userMovieRating = document.querySelector('#rating-input');
-     let userMovieGenre = document.querySelector('#genre-input');
-     let userMovieDescription = document.querySelector('#description-input');
+    let userMovieTitle = document.querySelector('#movie-title-input');
+    let userMovieRating = document.querySelector('#rating-input');
+    let userMovieGenre = document.querySelector('#genre-input');
+    let userMovieDescription = document.querySelector('#description-input');
 
     let userMovie = {
         title: userMovieTitle.value,
