@@ -122,34 +122,55 @@ export const deleteFavorite = async (id) => {
 };
 
 // render favorite movies in carousel
-export const renderMovieCards = (movie, parent) => {
-    movie.forEach(movie => {
+export const renderMovieCards = (movies, parent) => {
+    movies.forEach(movie => {
         const element = document.createElement('div');
         if (movie.id === 1) {
-            element.classList.add('slide','active');
+            element.classList.add('slide', 'active');
         } else {
-            element.classList.add('slide','right');
+            element.classList.add('slide', 'right');
         }
         element.innerHTML = `
-            <div  class="column shrink movie-container">
-                <div class="column shrink movie-container-left">
-                  <div class="column shrink align-center">
-                    <img src=${movie.image} alt="" class="movie-poster">
-                  </div>
-                </div>
-                <div class="column shrink movie-container-right">
-                  <h2>${movie.title}</h2>
-                  <p>${movie.rating} Stars</p>
-                  <p>${movie.description}</p>
-                  <div class="movie-container-buttons">
-                  </div>
-                  <button type="button">Watch Trailer</button>
-                </div>
-            </div>
-        `;
+      <div class="column shrink movie-container">
+        <div class="column shrink movie-container-left">
+          <div class="column shrink align-center">
+            <img src=${movie.image} alt="" class="movie-poster">
+          </div>
+        </div>
+        <div class="column shrink movie-container-right">
+          <h2>${movie.title}</h2>
+          <p>${movie.rating} Stars</p>
+          <p>${movie.description}</p>
+          <div class="movie-container-buttons">
+            <button type="button" class="remove-button">Remove</button>
+            <button type="button">Watch Trailer</button>
+          </div>
+        </div>
+      </div>
+    `;
         parent.appendChild(element);
-    })
+
+        // Add click event listener to the remove button
+        const removeButton = element.querySelector('.remove-button');
+        removeButton.addEventListener('click', (event) => {
+            // Remove the clicked movie card element from the DOM
+            removeMovieCard(event, movies, parent);
+
+            // Repopulate the rest of the movie cards
+            parent.innerHTML = '';
+            const remainingMovies = movies.filter(m => m.id !== movie.id);
+            renderMovieCards(remainingMovies, parent);
+        });
+    });
 };
+// remove carousel movie from DOM and
+function removeMovieCard(event) {
+    const element = event.currentTarget.parentNode.parentNode.parentNode;
+    element.remove();
+    let nextMovieParent = element.nextSibling;
+    // Add the 'active' class to the next movie card's parent
+    nextMovieParent.classList.add('active');
+}
 
 //create new favorite movie and save to database using "POST" method
 export const newUserMovie = async (event)=> {
@@ -167,28 +188,32 @@ export const newUserMovie = async (event)=> {
         genre: userMovieGenre.value,
         rating: userMovieRating.value,
         description: userMovieDescription.value,
+        image: 'images/img.png',
     }
     await setFavorite(userMovie);
     //reset form fields with empty strings after submission
     for (let i =0; i<childrenForm.length; i++){
         childrenForm[i].value = "";
     }
+    location.reload();
 };
 
 //delete favorite movie from database using "DELETE" method
 export const userDeleteSubmit = async (event) => {
     event.preventDefault();
+    // target all other siblings using parent node
     let childrenForm = event.target.parentNode.children;
     //reset form fields with empty strings after submission
     let id = document.querySelector('#delete-by-id').value;
-    confirm(`Are you sure you want to delete this movie? This action CANNOT be undone.`);
-
-    let deletedMovie = await deleteFavorite(id);
-    console.log(`Movie with ID ${id} deleted:`, deletedMovie);
-    // target all other siblings using parent node
-    for (let i =0; i<childrenForm.length; i++){
+    const confirmDelete = () => confirm(`Are you sure you want to delete this movie? This action CANNOT be undone.`);
+    if (confirmDelete() === true) {
+        let deletedMovie = await deleteFavorite(id);
+        console.log(`Movie with ID ${id} deleted:`, deletedMovie);
+    }
+    for (let i = 0; i < childrenForm.length; i++) {
         childrenForm[i].value = "";
     }
+    location.reload();
 };
 
 // user edited movie submission sent using 'PATCH' method
@@ -222,6 +247,7 @@ export const userPatchSubmit = async (event) => {
     for (let i =0; i<childrenForm.length; i++){
         childrenForm[i].value = "";
     }
+    location.reload();
 };
 
 //CAROUSEL FUNCTIONALITY

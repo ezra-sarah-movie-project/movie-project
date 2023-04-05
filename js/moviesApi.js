@@ -34,13 +34,21 @@ const displayMovies = async () => {
         const rating = document.createElement("div");
         rating.classList.add("Review");
         rating.textContent = `Rating: ${movie.rating}`;
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.style.height = '20px';
+        deleteButton.addEventListener("click", () => {
+            movieContainer.remove();
+        });
 
         movieContainer.appendChild(banner);
         movieContainer.appendChild(title);
         movieContainer.appendChild(rating);
+        movieContainer.appendChild(deleteButton);
 
         movieListContainer.appendChild(movieContainer);
     });
 };
 
-displayMovies();
+
+await displayMovies();
