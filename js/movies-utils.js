@@ -316,11 +316,11 @@ arrows.forEach(function(arrow){
 
     //MODAL POP UP FUNCTIONALITY
     // target the modal
-    let modal = document.getElementById("myModal");
+    let modal = document.querySelector("#myModal");
     // target modal button
-    let btn = document.getElementById("myBtn");
+    let btn = document.querySelector("#myBtn");
     // target span that closes the modal
-    let span = document.getElementsByClassName("close")[0];
+    let span = document.querySelector(".close");
     // display modal on click
     btn.onclick = function() {
         modal.style.display = "block";

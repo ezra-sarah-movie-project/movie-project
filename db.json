@@ -6,7 +6,7 @@
       "genre": "Drama",
       "rating": 5,
       "image": "https://image.tmdb.org/t/p/original/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg",
-      "description": "Movie description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem commodi deleniti dolor dolorem eaque est."
+      "description": "Officer K, a new blade runner for the Los Angeles Police Department, unearths a long-buried secret that has the potential to plunge what's left of society into chaos. His discovery leads him on a quest to find Rick Deckard (Harrison Ford), a former blade runner who's been missing for 30 years."
     },
     {
       "id": 2,
@@ -39,6 +39,11 @@
       "rating": 3,
       "image": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/gkgqtr2weef0sUM3k1mFe52iola.jpg",
       "description": "Aliens disguised as clowns crash land on Earth in a rural town to capture unsuspecting victims in cotton candy cocoons for later consumption."
+    }
+  ],
+  "movies": [
+    {
+
     }
   ]
 }
