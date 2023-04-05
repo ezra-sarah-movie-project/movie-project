@@ -276,6 +276,9 @@ form{
 .title, .review{
     display: flex;
     flex: 1 0 auto;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 img{
     justify-content: center;
@@ -293,4 +296,9 @@ img{
     border: unset;
     border-radius: 3px;
     background-color: navajowhite;
+}
+.movie-container-buttons{
+    display: flex;
+    flex-direction:row ;
+    gap:5px;
 }
