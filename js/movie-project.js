@@ -1,4 +1,4 @@
-import {setFavorite, patchFavorite, deleteFavorite, getFavorites, getFavorite, renderMovieCards, newUserMovie, userDeleteSubmit, userPatchSubmit} from "./movies-utils.js";
+import {getFavorites, renderMovieCards, newUserMovie, userDeleteSubmit, userPatchSubmit} from "./movies-utils.js";
 import {getMovies} from "./moviesApi.js";
 
 //main line JS
