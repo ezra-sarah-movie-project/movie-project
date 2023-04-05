@@ -1,10 +1,9 @@
-let MOVIE_API = '06c433449ce8de51aea9744d39596d5f'
-
+import {keys} from './keys.js'
 export const movieListContainer = document.getElementById("movie-compact-list");
 
 export const getMovies = async () => {
     try {
-        let response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${MOVIE_API}`);
+        let response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${keys.MOVIES_APPID}`);
         let data = await response.json();
         const movies = data.results.slice(0, 10).map((movie) => {
             return {

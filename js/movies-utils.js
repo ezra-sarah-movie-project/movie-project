@@ -1,12 +1,12 @@
-
+// loading screen while loading DOM
 window.addEventListener('load',()=>{
     const loader = document.querySelector('.loading');
     loader.classList.add('loading-hidden');
     loader.addEventListener('transitioned', ()=>{
         document.body.removeChild("loading");
     });
-})
-
+});
+// get all favorites
 export const getFavorites = async () => {
     try {
         let url = `http://localhost:3000/favorites`;
@@ -21,8 +21,8 @@ export const getFavorites = async () => {
     } catch(error){
         console.log(error);
     }
-}
-
+};
+// get specific favorite movie by id
 export const getFavorite = async (id) => {
     try {
         let url = `http://localhost:3000/favorites/${id}`;
@@ -37,8 +37,8 @@ export const getFavorite = async (id) => {
     } catch(error){
         console.log(error);
     }
-}
-
+};
+// search favorites by title
 export const searchFavorite = async (movie) => {
     let favorites = await getFavorites();
     if (movie.title) {
@@ -60,8 +60,8 @@ export const searchFavorite = async (movie) => {
             return 'No movies were found with that genre';
         }
     }
-}
-
+};
+// add object into favorites
 export const setFavorite = async (movie) => {
     try {
         let url = `http://localhost:3000/favorites`;
@@ -78,8 +78,8 @@ export const setFavorite = async (movie) => {
     } catch(error){
         console.log(error);
     }
-}
-
+};
+// edit stored favorites using patch method
 export const patchFavorite = async (id, movie) => {
     try {
         if (!id) {
@@ -99,7 +99,7 @@ export const patchFavorite = async (id, movie) => {
     } catch(error){
         console.log(error);
     }
-}
+};
 // delete database object by id
 export const deleteFavorite = async (id) => {
     try {
@@ -119,7 +119,7 @@ export const deleteFavorite = async (id) => {
     } catch(error){
         console.log(error);
     }
-}
+};
 
 // render favorite movies in carousel
 export const renderMovieCards = (movie, parent) => {
@@ -139,7 +139,7 @@ export const renderMovieCards = (movie, parent) => {
                 </div>
                 <div class="column shrink movie-container-right">
                   <h2>${movie.title}</h2>
-                  <p>---star rating---</p>
+                  <p>${movie.rating} Stars</p>
                   <p>${movie.description}</p>
                   <div class="movie-container-buttons">
                   </div>
@@ -147,16 +147,16 @@ export const renderMovieCards = (movie, parent) => {
                 </div>
             </div>
         `;
-        element.querySelector('button').addEventListener('click', function () {
-            element.remove();
-        });
         parent.appendChild(element);
     })
-}
+};
 
 //create new favorite movie and save to database using "POST" method
 export const newUserMovie = async (event)=> {
     event.preventDefault();
+    // target all other siblings using parent node
+    let childrenForm = event.target.parentNode.children;
+
     let userMovieTitle = document.querySelector('#movie-title-input');
     let userMovieRating = document.querySelector('#rating-input');
     let userMovieGenre = document.querySelector('#genre-input');
@@ -169,19 +169,34 @@ export const newUserMovie = async (event)=> {
         description: userMovieDescription.value,
     }
     await setFavorite(userMovie);
-}
+    //reset form fields with empty strings after submission
+    for (let i =0; i<childrenForm.length; i++){
+        childrenForm[i].value = "";
+    }
+};
+
 //delete favorite movie from database using "DELETE" method
 export const userDeleteSubmit = async (event) => {
     event.preventDefault();
+    let childrenForm = event.target.parentNode.children;
+    //reset form fields with empty strings after submission
     let id = document.querySelector('#delete-by-id').value;
+    confirm(`Are you sure you want to delete this movie? This action CANNOT be undone.`);
+
     let deletedMovie = await deleteFavorite(id);
     console.log(`Movie with ID ${id} deleted:`, deletedMovie);
-}
+    // target all other siblings using parent node
+    for (let i =0; i<childrenForm.length; i++){
+        childrenForm[i].value = "";
+    }
+};
 
 // user edited movie submission sent using 'PATCH' method
 export const userPatchSubmit = async (event) => {
     //prevent default submission
     event.preventDefault();
+    // target all other siblings using parent node
+    let childrenForm = event.target.parentNode.children;
     // target ID patch input
     let userPatchId = document.querySelector('#patch-id');
     // target patch title input
@@ -203,7 +218,11 @@ export const userPatchSubmit = async (event) => {
     }
     //patch request sent to database
     await patchFavorite(userPatchId.value,update);
-}
+    //reset form fields with empty strings after submission
+    for (let i =0; i<childrenForm.length; i++){
+        childrenForm[i].value = "";
+    }
+};
 
 //CAROUSEL FUNCTIONALITY
 let arrows = document.querySelectorAll('.arrow');

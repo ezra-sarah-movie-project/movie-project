@@ -1,14 +1,19 @@
-import {setFavorite, patchFavorite, deleteFavorite, getFavorites, getFavorite, renderMovieCards, newUserMovie, userDeleteSubmit, userPatchSubmit} from "./movies.js";
+import {setFavorite, patchFavorite, deleteFavorite, getFavorites, getFavorite, renderMovieCards, newUserMovie, userDeleteSubmit, userPatchSubmit} from "./movies-utils.js";
 import {getMovies} from "./moviesApi.js";
 
-
+//main line JS
 (async ()=> {
+    //fetch movies from tmdb API
     const movies = await getMovies();
     console.log(movies);
 
+    //fetch favorite movies from db.json
     let favorites = await getFavorites();
     console.log(favorites);
+
+    //target parent for carousel favorite movies insertion
     let parent = document.querySelector('.slides');
+    //render movie cards in carousel
     await renderMovieCards(favorites, parent);
 
     //target user movie submit button

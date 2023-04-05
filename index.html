@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ezra & Sarah Movie Project</title>
+  <title>Ezra, Sarah and Zion Movie Project</title>
   <link rel="stylesheet" href="css/resets.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/movie.css">
-<!--    <link rel="stylesheet" href="css/sb-safe-space.css">-->
+
 </head>
 <body>
 <div class="page-wrapper">
@@ -23,11 +23,11 @@
         <div class="slides">
         </div>
         <div class="controls">
-          <div class="arrow arrow-left">
-            <img class='svgLeft' src="images/arrow-up-337-svgrepo-com.svg" alt="left arrow">
+          <div class="arrow">
+            <img class='svgLeft arrow-left' src="images/arrow-up-337-svgrepo-com.svg" alt="left arrow">
           </div>
-          <div class="arrow arrow-right">
-            <img class='svgRight' src="images/arrow-up-337-svgrepo-com.svg" alt="right arrow">
+          <div class="arrow">
+            <img class='svgRight arrow-right' src="images/arrow-up-337-svgrepo-com.svg" alt="right arrow">
           </div>
         </div>
       </div>
@@ -52,29 +52,26 @@
       <div class="row">
         <span class="close">&times;</span>
         <!--      ADD A MOVIE FORM START-->
-        <form class="column text-center">
+        <form class="column text-center user-movie-form">
           <h2>Add a Movie!</h2>
-          <div class="column">
+
             <label for="movie-title-input">Movie title:</label>
             <input class="patches" type="text" id="movie-title-input">
-          </div>
-          <div class="column">
+
             <label for="rating-input">Movie Rating (1-5)</label>
             <input class="patches" type="text" id="rating-input">
-          </div>
-          <div class="column">
+
             <label for="genre-input">Movie Genre:</label>
             <input class="patches" type="text" id="genre-input">
-          </div>
-          <div class="column">
+
             <label for="description-input">Movie Description:</label>
             <input class="patches" type="text" id="description-input">
-          </div>
+
           <button type="submit" id="movie-submit-button">Submit movie</button>
         </form>
         <!--      END OF ADD A MOVIE FORM-->
         <!--      DELETE BY ID FORM START-->
-        <form class="column text-center">
+        <form class="column text-center user-delete-form">
           <h2>Delete a Movie by ID</h2>
           <label For="delete-by-id">Delete movie by ID:</label>
           <input class="patches" type="text" id="delete-by-id">
@@ -82,7 +79,7 @@
         </form>
         <!--      DELETE BY ID FORM START END-->
         <!--      EDIT MOVIES FORM START-->
-        <form class="column text-center">
+        <form class="column text-center user-edit-form">
           <h2>Edit a Movie!</h2>
           <label For="patch-id">Movie ID:</label>
           <input class="patches" type="text" id="patch-id">
