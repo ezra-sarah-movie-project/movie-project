@@ -140,6 +140,7 @@ export const renderMovieCards = (movies, parent) => {
         <div class="column shrink movie-container-right">
           <h2>${movie.title}</h2>
           <p>${movie.rating} Stars</p>
+          <p>Genre: ${movie.genre}</p>
           <p>${movie.description}</p>
           <div class="movie-container-buttons">
             <button type="button" class="remove-button">Remove</button>
