@@ -7,6 +7,7 @@
 
 
 .page-wrapper{
+
     /*background-color: rgb(17, 9, 30);*/
     background: url('/images/starback.gif');
     background-repeat: no-repeat;
@@ -23,8 +24,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: darkgray;
-    transition: 3.5s, visibility 3.5s;
+    background-color: rgba(17, 13, 31, 0.91);
+    transition: 2s, visibility 2s;
     z-index: 9;
 }
 
@@ -36,7 +37,7 @@
     content: "";
     width:75px;
     height: 75px;
-    border: 15px solid #9b5454;
+    border: 15px solid #504052;
     border-top-color: #2d2d73;
     border-radius: 50%;
     animation: loading .75s ease infinite;
@@ -65,7 +66,7 @@
     flex-direction: row;
     background-color: rgba(59, 29, 59, 0.71);
     border-radius: 20px;
-    box-shadow:rgb(255 255 255 / 10%) 0px 0px 20px 0px;
+    box-shadow:rgb(255 255 255 / 10%) 0 0 20px 0;
     border:1px solid #5e1fe1;
 }
 .movie-container-right{
@@ -97,6 +98,8 @@
     margin-bottom: 100px;
 }
 .movie-compact{
+    display: flex;
+    flex-direction: row;
     height: 325px;
 }
 .container.slider{
@@ -125,6 +128,7 @@
     transform: translateY(-50%);
     cursor: pointer;
     color: rgba(255, 222, 173, 0.78);
+    border: unset;
 }
 .arrow-right{
     position: absolute;
@@ -133,8 +137,8 @@
     transform: translateY(-50%);
     cursor: pointer;
     color: rgba(255, 222, 173, 0.78);
+    border: unset;
 }
-
 .slide{
     width: 100%;
     height: 100%;
@@ -194,12 +198,14 @@ button{
     transform: rotate(270deg);
     filter: invert(1);
     opacity: 0.3;
+    border: unset;
 }
 .svgRight {
     max-width: 50px;
     transform: rotate(90deg);
     filter: invert(1);
     opacity: 0.3;
+    border: unset;
 }
 form{
     color: rgba(255, 222, 173, 0.78);
@@ -209,10 +215,11 @@ form{
 .theOtherMovies{
     display: flex;
     justify-content: space-between;
+    gap: 10px;
+    max-width: 1050px;
+    overflow: scroll;
 }
-.theOtherMovies .movieStuff {
-    background-color: navajowhite;
-}
+
 
 /* the modal background */
 .modal {
@@ -251,4 +258,61 @@ form{
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+.movieStuff{
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    flex: 1 0 auto;
+    direction: ltr;
+    background-color: rgba(59, 29, 59, 0.71);
+    border-radius: 15px;
+    border:1px solid #5e1fe1;
+    color: rgba(255, 222, 173, 0.78);
+    padding: 5px;
+    margin: 5px;
+    font-size: 16px;
+}
+.movieCardRow{
+    /*gap: 10px;*/
+    /*max-width: 1000px;*/
+    overflow: scroll;
+    direction: ltr;
+}
+.movieBanner{
+    max-height: 200px;
+}
+.img-wrapper{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex: 0 1 auto;
+    max-height: 30px;
+}
+.title{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.title, .review{
+    display: flex;
+    flex: 1 0 auto;
+}
+img{
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    border-radius: 10px;
+    border:1px solid #5e1fe1;
+}
+#myBtn{
+    margin: 30px;
+    padding: 15px;
+}
+.patches{
+    border: unset;
+    border-radius: 3px;
+    background-color: navajowhite;
 }
