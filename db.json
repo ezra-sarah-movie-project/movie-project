@@ -43,7 +43,164 @@
   ],
   "movies": [
     {
-
+      "title": "The Super Mario Bros. Movie",
+      "genre": "Animation",
+      "rating": 7.5,
+      "image": "https://image.tmdb.org/t/p/original//qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg",
+      "description": "While working underground to fix a water main, Brooklyn plumbers—and brothers—Mario and Luigi are transported down a mysterious pipe and wander into a magical new world. But when the brothers are separated, Mario embarks on an epic quest to find Luigi.",
+      "id": 1
+    },
+    {
+      "title": "Shazam! Fury of the Gods",
+      "genre": "Action",
+      "rating": 6.9,
+      "image": "https://image.tmdb.org/t/p/original//3GrRgt6CiLIUXUtoktcv1g2iwT5.jpg",
+      "description": "Billy Batson and his foster siblings, who transform into superheroes by saying \"Shazam!\", are forced to get back into action and fight the Daughters of Atlas, who they must stop from using a weapon that could destroy the world.",
+      "id": 2
+    },
+    {
+      "title": "Ant-Man and the Wasp: Quantumania",
+      "genre": "Action",
+      "rating": 6.5,
+      "image": "https://image.tmdb.org/t/p/original//ngl2FKBlU4fhbdsrtdom9LVLBXw.jpg",
+      "description": "Super-Hero partners Scott Lang and Hope van Dyne, along with with Hope's parents Janet van Dyne and Hank Pym, and Scott's daughter Cassie Lang, find themselves exploring the Quantum Realm, interacting with strange new creatures and embarking on an adventure that will push them beyond the limits of what they thought possible.",
+      "id": 3
+    },
+    {
+      "title": "Avatar: The Way of Water",
+      "genre": "Science Fiction",
+      "rating": 7.7,
+      "image": "https://image.tmdb.org/t/p/original//t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
+      "description": "Set more than a decade after the events of the first film, learn the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.",
+      "id": 4
+    },
+    {
+      "title": "Creed III",
+      "genre": "Drama",
+      "rating": 7.3,
+      "image": "https://image.tmdb.org/t/p/original//cvsXj3I9Q2iyyIo95AecSd1tad7.jpg",
+      "description": "After dominating the boxing world, Adonis Creed has been thriving in both his career and family life. When a childhood friend and former boxing prodigy, Damian Anderson, resurfaces after serving a long sentence in prison, he is eager to prove that he deserves his shot in the ring. The face-off between former friends is more than just a fight. To settle the score, Adonis must put his future on the line to battle Damian — a fighter who has nothing to lose.",
+      "id": 5
+    },
+    {
+      "title": "Murder Mystery 2",
+      "genre": "Comedy",
+      "rating": 6.6,
+      "image": "https://image.tmdb.org/t/p/original//s1VzVhXlqsevi8zeCMG9A16nEUf.jpg",
+      "description": "After starting their own detective agency, Nick and Audrey Spitz land a career-making case when their billionaire pal is kidnapped from his wedding.",
+      "id": 6
+    },
+    {
+      "title": "La niña de la comunión",
+      "genre": "Horror",
+      "rating": 6,
+      "image": "https://image.tmdb.org/t/p/original//sP6AO11a7jWgsmT9T8j9EGIWAaZ.jpg",
+      "description": "Spain, late 1980s. Newcomer Sara tries to fit in with the other teens in this tight-knit small town in the province of Tarragona. If only she were more like her extroverted best friend, Rebe. They go out one night at a nightclub, on the way home, they come upon a little girl holding a doll, dressed for her first communion. And that's when the nightmare begins.",
+      "id": 7
+    },
+    {
+      "title": "Puss in Boots: The Last Wish",
+      "genre": "Animation",
+      "rating": 8.3,
+      "image": "https://image.tmdb.org/t/p/original//kuf6dutpsT0vSVehic3EZIqkOBt.jpg",
+      "description": "Puss in Boots discovers that his passion for adventure has taken its toll: He has burned through eight of his nine lives, leaving him with only one life left. Puss sets out on an epic journey to find the mythical Last Wish and restore his nine lives.",
+      "id": 8
+    },
+    {
+      "title": "65",
+      "genre": "Science Fiction",
+      "rating": 6.3,
+      "image": "https://image.tmdb.org/t/p/original//rzRb63TldOKdKydCvWJM8B6EkPM.jpg",
+      "description": "65 million years ago, the only 2 survivors of a spaceship from Somaris that crash-landed on Earth must fend off dinosaurs and reach the escape vessel in time before an imminent asteroid strike threatens to destroy the planet.",
+      "id": 9
+    },
+    {
+      "title": "Evil Dead Rise",
+      "genre": "Horror",
+      "rating": 7.1,
+      "image": "https://image.tmdb.org/t/p/original//mIBCtPvKZQlxubxKMeViO2UrP3q.jpg",
+      "description": "Two sisters find an ancient vinyl that gives birth to bloodthirsty demons that run amok in a Los Angeles apartment building and thrusts them into a primal battle for survival as they face the most nightmarish version of family imaginable.",
+      "id": 10
+    },
+    {
+      "title": "John Wick: Chapter 4",
+      "genre": "Action",
+      "rating": 8,
+      "image": "https://image.tmdb.org/t/p/original//vZloFAK7NmvMGKE7VkF5UHaz0I.jpg",
+      "description": "With the price on his head ever increasing, John Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy with powerful alliances across the globe and forces that turn old friends into foes.",
+      "id": 11
+    },
+    {
+      "title": "Chupa",
+      "genre": "Adventure",
+      "rating": 6.5,
+      "image": "https://image.tmdb.org/t/p/original//ra3xm8KFAkwK0CdbPRkfYADJYTB.jpg",
+      "description": "While visiting family in Mexico, a lonely boy befriends a mythical creature hiding on his grandfather's ranch and embarks on the adventure of a lifetime.",
+      "id": 12
+    },
+    {
+      "title": "길복순",
+      "genre": "Action",
+      "rating": 6.7,
+      "image": "https://image.tmdb.org/t/p/original//taYgn3RRpCGlTGdaGQvnSIOzXFy.jpg",
+      "description": "At work, she's a renowned assassin. At home, she's a single mom to a teenage daughter. Killing? That's easy. It's parenting that's the hard part.",
+      "id": 13
+    },
+    {
+      "title": "Cocaine Bear",
+      "genre": "Thriller",
+      "rating": 6.4,
+      "image": "https://image.tmdb.org/t/p/original//gOnmaxHo0412UVr1QM5Nekv1xPi.jpg",
+      "description": "Inspired by a true story, an oddball group of cops, criminals, tourists and teens converge in a Georgia forest where a 500-pound black bear goes on a murderous rampage after unintentionally ingesting cocaine.",
+      "id": 14
+    },
+    {
+      "title": "Gangs of Lagos",
+      "genre": "Crime",
+      "rating": 5.4,
+      "image": "https://image.tmdb.org/t/p/original//nGwFsB6EXUCr21wzPgtP5juZPSv.jpg",
+      "description": "A group of friends who each have to navigate their own destiny, growing up on the bustling streets and neighborhood of Isale Eko, Lagos.",
+      "id": 15
+    },
+    {
+      "title": "The Pope's Exorcist",
+      "genre": "Horror",
+      "rating": 6.6,
+      "image": "https://image.tmdb.org/t/p/original//9JBEPLTPSm0d1mbEcLxULjJq9Eh.jpg",
+      "description": "Father Gabriele Amorth, Chief Exorcist of the Vatican, investigates a young boy's terrifying possession and ends up uncovering a centuries-old conspiracy the Vatican has desperately tried to keep hidden.",
+      "id": 16
+    },
+    {
+      "title": "Momias",
+      "genre": "Animation",
+      "rating": 7.1,
+      "image": "https://image.tmdb.org/t/p/original//qVdrYN8qu7xUtsdEFeGiIVIaYd.jpg",
+      "description": "Through a series of unfortunate events, three mummies end up in present-day London and embark on a wacky and hilarious journey in search of an old ring belonging to the Royal Family, stolen by ambitious archaeologist Lord Carnaby.",
+      "id": 17
+    },
+    {
+      "title": "Supercell",
+      "genre": "Action",
+      "rating": 6.3,
+      "image": "https://image.tmdb.org/t/p/original//gbGHezV6yrhua0KfAgwrknSOiIY.jpg",
+      "description": "Good-hearted teenager William always lived in hope of following in his late father’s footsteps and becoming a storm chaser. His father’s legacy has now been turned into a storm-chasing tourist business, managed by the greedy and reckless Zane Rogers, who is now using William as the main attraction to lead a group of unsuspecting adventurers deep into the eye of the most dangerous supercell ever seen.",
+      "id": 18
+    },
+    {
+      "title": "Attack on Titan",
+      "genre": "Action",
+      "rating": 6.2,
+      "image": "https://image.tmdb.org/t/p/original//qNz4l8UgTkD8rlqiKZ556pCJ9iO.jpg",
+      "description": "As viable water is depleted on Earth, a mission is sent to Saturn's moon Titan to retrieve sustainable H2O reserves from its alien inhabitants. But just as the humans acquire the precious resource, they are attacked by Titan rebels, who don't trust that the Earthlings will leave in peace.",
+      "id": 19
+    },
+    {
+      "title": "The Last Kingdom: Seven Kings Must Die",
+      "genre": "Action",
+      "rating": 7.5,
+      "image": "https://image.tmdb.org/t/p/original//qcNDxDzd5OW9wE3c8nWxCBQoBrM.jpg",
+      "description": "In the wake of King Edward's death, Uhtred of Bebbanburg and his comrades adventure across a fractured kingdom in the hopes of uniting England at last.",
+      "id": 20
     }
   ]
 }

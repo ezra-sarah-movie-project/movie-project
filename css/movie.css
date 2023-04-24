@@ -48,7 +48,7 @@
     border:1px solid #5e1fe1;
 }
 .movie-container{
-    height: 55%;
+    height: 75%;
     position: relative;
     flex-direction: row;
     background-color: rgba(59, 29, 59, 0.71);
@@ -83,11 +83,6 @@
 .header-row{
     height: 10vh;
     margin-bottom: 100px;
-}
-.movie-compact{
-    display: flex;
-    flex-direction: row;
-    height: 325px;
 }
 /*START carousel CSS*/
 .container.slider{
@@ -239,28 +234,6 @@ form{
     text-decoration: none;
     cursor: pointer;
 }
-.movieStuff{
-    min-width: 200px;
-    display: flex;
-    flex-direction: column;
-    max-width: 200px;
-    flex: 1 0 auto;
-    direction: ltr;
-    background-color: rgba(59, 29, 59, 0.71);
-    border-radius: 15px;
-    border:1px solid #5e1fe1;
-    color: rgba(255, 222, 173, 0.78);
-    padding: 5px;
-    margin: 5px;
-    font-size: 16px;
-}
-.movieCardRow{
-    overflow: scroll;
-    direction: ltr;
-}
-.movieBanner{
-    max-height: 200px;
-}
 .img-wrapper{
     display: flex;
     justify-content: center;
@@ -272,6 +245,9 @@ form{
 .title{
     font-size: 20px;
     font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 .title, .review{
     display: flex;
@@ -301,4 +277,49 @@ img{
     display: flex;
     flex-direction:row ;
     gap:5px;
+}
+.Review {
+    display: flex;
+    justify-content: center;
+}
+
+
+/*compact movie cards*/
+.movie-compact-row{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(17, 9, 30, 0.95);
+    overflow: scroll;
+}
+.movie-card {
+    max-height: 450px;
+    width: 250px;
+    margin: 5px;
+    background-color: rgba(59, 29, 59, 0.71);
+    color: rgba(255, 222, 173, 0.78);
+    font-size: 16px;
+    border:1px solid #5e1fe1;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    direction: ltr;
+    border-radius: 15px;
+    padding-bottom: 7px;
+    text-align: center;
+}
+.movie-poster-compact {
+    max-height: 250px;
+    object-fit: cover;
+}
+.movieCardRow{
+    overflow: scroll;
+    direction: ltr;
+}
+.description-scroller {
+    height: 100px;
+    overflow: scroll;
+    padding: 5px;
+}
+.movie-card-delete-btn{
+    height: 15px;
 }

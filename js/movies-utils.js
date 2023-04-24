@@ -1,3 +1,5 @@
+import {getLocalMovies} from "./db-interaction.js";
+
 // loading screen while loading DOM
 window.addEventListener('load',()=>{
     const loader = document.querySelector('.loading');
@@ -6,123 +8,9 @@ window.addEventListener('load',()=>{
         document.body.removeChild("loading");
     });
 });
-// get all favorites
-export const getFavorites = async () => {
-    try {
-        let url = `http://localhost:3000/favorites`;
-        let options = {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }
-        let response = await fetch(url, options);
-        let data = await response.json();
-        return data;
-    } catch(error){
-        console.log(error);
-    }
-};
-// get specific favorite movie by id
-export const getFavorite = async (id) => {
-    try {
-        let url = `http://localhost:3000/favorites/${id}`;
-        let options = {
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }
-        let response = await fetch(url, options);
-        let data = await response.json();
-        return data;
-    } catch(error){
-        console.log(error);
-    }
-};
-// search favorites by title
-export const searchFavorite = async (movie) => {
-    let favorites = await getFavorites();
-    if (movie.title) {
-        let favorite = favorites.find((result) => {
-            return movie.title === result.title;
-        });
-        if (favorite) {
-            return favorite;
-        } else {
-            return 'No movie was found with that title';
-        }
-    } else if(movie.genre) {
-        let favoritesFiltered = favorites.filter((result) => {
-            return movie.genre === result.genre;
-        });
-        if (favoritesFiltered.length > 0) {
-            return favoritesFiltered;
-        } else {
-            return 'No movies were found with that genre';
-        }
-    }
-};
-// add object into favorites
-export const setFavorite = async (movie) => {
-    try {
-        let url = `http://localhost:3000/favorites`;
-        let options = {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(movie)
-        }
-        let response = await fetch(url, options);
-        let data = await response.json();
-        return data;
-    } catch(error){
-        console.log(error);
-    }
-};
-// edit stored favorites using patch method
-export const patchFavorite = async (id, movie) => {
-    try {
-        if (!id) {
-            throw new Error('You must provide an id');
-        }
-        let url = `http://localhost:3000/favorites/${id}`;
-        let options = {
-            method: "PATCH",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(movie)
-        }
-        let response = await fetch(url, options);
-        let data = await response.json();
-        return data;
-    } catch(error){
-        console.log(error);
-    }
-};
-// delete database object by id
-export const deleteFavorite = async (id) => {
-    try {
-        if (!id) {
-            throw new Error('You must provide an id');
-        }
-        let url = `http://localhost:3000/favorites/${id}`;
-        let options = {
-            method: "DELETE",
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }
-        let response = await fetch(url, options);
-        let data = await response.json();
-        return data;
-    } catch(error){
-        console.log(error);
-    }
-};
 
 // render favorite movies in carousel
-export const renderMovieCards = (movies, parent) => {
+export const renderCarouselCards = (movies, parent) => {
     movies.forEach(movie => {
         const element = document.createElement('div');
         if (movie.id === 1) {
@@ -160,18 +48,49 @@ export const renderMovieCards = (movies, parent) => {
             // Repopulate the rest of the movie cards
             parent.innerHTML = '';
             const remainingMovies = movies.filter(m => m.id !== movie.id);
-            renderMovieCards(remainingMovies, parent);
+            renderCarouselCards(remainingMovies, parent);
         });
     });
 };
-// remove carousel movie from DOM and
-function removeMovieCard(event) {
-    const element = event.currentTarget.parentNode.parentNode.parentNode;
-    element.remove();
-    let nextMovieParent = element.nextSibling;
-    // Add the 'active' class to the next movie card's parent
-    nextMovieParent.classList.add('active');
+
+//render smaller movie cards.
+export const renderMovieCards = async (parent) => {
+    let movies = await getLocalMovies();
+    console.log("LOCAL MOVIES ARRAY")
+    console.log(movies);
+    movies.forEach(movie => {
+        const element = document.createElement("div");
+        element.innerHTML = `
+             <div class="movie-card movieStuff">
+            <div class="movie-poster-compact">
+              <img src="${movie.image}" alt="${movie.title} movie poster">
+            </div>
+            <h3>${movie.title}</h3>
+            <div class="description-scroller">
+              <p>${movie.description}</p>
+            </div>
+            <div class="rating-bar">
+              <p>Rating: ${movie.rating}</p>
+            </div>
+            <div>
+            <p>Genre: ${movie.genre}</p>
+            </div>
+            <div class="display-flex justify-center">
+              <button class="movie-card-delete-btn">Delete</button>
+            </div>
+          </div>
+        `;
+        parent.appendChild(element);
+    });
 }
+// // remove carousel movie from DOM and
+// function removeMovieCard(event) {
+//     const element = event.currentTarget.parentNode.parentNode.parentNode;
+//     element.remove();
+//     let nextMovieParent = element.nextSibling;
+//     // Add the 'active' class to the next movie card's parent
+//     nextMovieParent.classList.add('active');
+// }
 
 //create new favorite movie and save to database using "POST" method
 export const newUserMovie = async (event)=> {
